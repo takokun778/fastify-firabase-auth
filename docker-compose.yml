@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  auth:
+    container_name: auth
+    build:
+      context: .
+      args:
+        - NODE_VERSION=${NODE_VERSION}
+        - PORT=${PORT}
+        - FIREBASE_API_KEY=${FIREBASE_API_KEY}
+        - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+        - FIREBASE_MESSAGING_SENDER_ID=${FIREBASE_MESSAGING_SENDER_ID}
+        - FIREBASE_APP_ID=${FIREBASE_APP_ID}
+    ports:
+      - ${PORT}:${PORT}
